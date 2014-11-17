@@ -37,6 +37,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showTaskDetail"{
+            println("Segue to showTaskDetail")
+            
+            //this creates a link to the destination view controller
+            let detailVC: TaskDetailedViewController = segue.destinationViewController as TaskDetailedViewController
+            
+            //this gets the path of the selected row
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            
+            //this gets the value of the selected row
+            let thisTask = taskArray[indexPath!.row]
+            
+            //this pushes the value to the destination VC using the established link
+            detailVC.detailTaskModel = thisTask
+            
+        }
+        
+    }
+    
     
     //UITableViewDataSource ---------------------------------------------------------------------------------------
     
@@ -61,12 +82,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //UITableViewDelegate ---------------------------------------------------------------------------------------
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //
         
         println(indexPath.row)
         
-        performSegueWithIdentifier("showTaskDetail", sender: self)
+        performSegueWithIdentifier("showTaskDetail", sender: self.tableView)
         
     }
 

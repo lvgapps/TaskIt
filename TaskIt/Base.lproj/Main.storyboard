@@ -61,7 +61,7 @@
                     <navigationItem key="navigationItem" id="nzg-cH-XxH"/>
                     <connections>
                         <outlet property="tableView" destination="Spt-DI-dwi" id="Icd-m8-8Z6"/>
-                        <segue destination="fdu-WY-CQa" kind="show" identifier="showTaskDetail" id="HXE-ZZ-MwX"/>
+                        <segue destination="fdu-WY-CQa" kind="show" identifier="showTaskDetail" id="2wK-hT-4CN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -9,9 +9,13 @@
 import UIKit
 
 class TaskDetailedViewController: UIViewController {
+    
+    var detailTaskModel: TaskModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        println(detailTaskModel.task)
 
         // Do any additional setup after loading the view.
     }
